@@ -1,5 +1,6 @@
 package com.huxian.network;
 
+import com.huxian.model.Movie;
 import com.huxian.model.MovieFeed;
 
 import rx.Observable;
@@ -10,5 +11,7 @@ import rx.Observable;
 public interface Repository {
 
     Observable<MovieFeed> getMovieList(String list, int start, int count);
+
+    Observable<Movie> getMovie(String movieId);
 
 }

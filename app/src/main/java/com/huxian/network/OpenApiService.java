@@ -1,5 +1,6 @@
 package com.huxian.network;
 
+import com.huxian.model.Movie;
 import com.huxian.model.MovieFeed;
 
 import retrofit.http.GET;
@@ -17,5 +18,8 @@ public interface OpenApiService {
 
     @GET("movie/search")
     Observable<MovieFeed> getSearchList(@Query("q") String searchText);
+
+    @GET("movie/subject/{movieId}")
+    Observable<Movie> getMovie(@Path("movieId") String movieId);
 
 }

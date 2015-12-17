@@ -1,6 +1,7 @@
 package com.huxian.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.huxian.R;
 import com.huxian.model.Movie;
+import com.huxian.ui.MovieDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -92,9 +94,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             @Override
             public void onClick(View view) {
                 String movieId = String.valueOf(view.getTag());
-//                Intent intent = new Intent(context, MovieDetailActivity.class);
-//                intent.putExtra(MovieDetailActivity.INTENT_MOVIE_ID, movieId);
-//                context.startActivity(intent);
+                Intent intent = new Intent(context, MovieDetailActivity.class);
+                intent.putExtra(MovieDetailActivity.INTENT_MOVIE_ID, movieId);
+                context.startActivity(intent);
             }
         };
     }
