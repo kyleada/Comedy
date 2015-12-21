@@ -1,7 +1,5 @@
 package com.huxian.presenter;
 
-import android.content.Context;
-
 import com.huxian.domain.GetMovieDetailUsecase;
 import com.huxian.model.Movie;
 import com.huxian.ui.view.IMovieDetailView;
