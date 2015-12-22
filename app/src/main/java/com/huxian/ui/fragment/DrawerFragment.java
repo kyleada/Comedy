@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.huxian.R;
-import com.huxian.model.Menu;
 import com.huxian.adapter.DrawerAdapter;
+import com.huxian.model.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
