@@ -90,14 +90,6 @@ public class MovieDetailActivity extends BaseActivity implements IMovieDetailVie
         llmActor.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvActor.setLayoutManager(llmActor);
         actorList = new ArrayList<>();
-
-
-        Actor actor = new Actor();
-        actor.setName("asdfasdf");
-        actorList.add(actor);
-
-
-
         actorAdapter = new MovieActorAdapter(this, actorList);
         rvActor.setAdapter(actorAdapter);
     }
