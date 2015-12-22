@@ -25,6 +25,7 @@ import com.huxian.model.Movie;
 import com.huxian.presenter.MovieDetailPresenter;
 import com.huxian.ui.view.IMovieDetailView;
 import com.huxian.util.BlurUtil;
+import com.huxian.util.StringUtil;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -51,6 +52,8 @@ public class MovieDetailActivity extends BaseActivity implements IMovieDetailVie
     private List<Actor> actorList;
 
     private TextView tvMovieTitle;
+    private TextView tvOriginalTitle;
+    private TextView tvGenres;
     private ImageView ivMoviePoster;
     private ImageView ivBlurBackground;
     private TextView tvSummary;
@@ -74,6 +77,8 @@ public class MovieDetailActivity extends BaseActivity implements IMovieDetailVie
 
     private void initView() {
         tvMovieTitle = (TextView) findViewById(R.id.tv_movie_detail_title);
+        tvOriginalTitle = (TextView) findViewById(R.id.tv_movie_detail_original_title);
+        tvGenres = (TextView) findViewById(R.id.tv_movie_detail_genres);
         ivMoviePoster = (ImageView) findViewById(R.id.iv_movie_detail_poster);
         ivBlurBackground = (ImageView) findViewById(R.id.iv_movie_basic_info_background);
         tvSummary = (TextView) findViewById(R.id.tv_movie_detail_summary);
@@ -83,7 +88,9 @@ public class MovieDetailActivity extends BaseActivity implements IMovieDetailVie
         if (movie.getImages() != null) {
             blurBackground(movie.getImages().getLarge());
         }
-
+        tvMovieTitle.setText(movie.getTitle());
+        tvOriginalTitle.setText(movie.getOriginal_title());
+        tvGenres.setText(StringUtil.listInsertComma(movie.getGenres()));
         tvSummary.setOnClickListener(summaryExpansionListener);
         tvExpansion.setOnClickListener(summaryExpansionListener);
         LinearLayoutManager llmActor = new LinearLayoutManager(this);
@@ -171,6 +178,7 @@ public class MovieDetailActivity extends BaseActivity implements IMovieDetailVie
         if (movie.getDirectors() != null && movie.getDirectors().size() > 0) {
             actorList.clear();
             actorList.addAll(movie.getDirectors());
+            actorList.addAll(movie.getCasts());
             actorAdapter.notifyDataSetChanged();
         }
     }
