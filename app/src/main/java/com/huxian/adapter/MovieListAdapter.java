@@ -65,16 +65,18 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         if (movie.getImages() != null && !TextUtils.isEmpty(movie.getImages().getLarge())) {
             Picasso.with(context).load(movie.getImages().getLarge()).into(holder.ivPoster);
         }
-        holder.rootView.setTag(movie.getId());
+        holder.rootView.setTag(movie);
         holder.rootView.setOnClickListener(movieDetailClickListener);
     }
 
     private View.OnClickListener movieDetailClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            String movieId = String.valueOf(view.getTag());
+//            String movieId = String.valueOf(view.getTag());
+            Movie movie = (Movie) view.getTag();
             Intent intent = new Intent(context, MovieDetailActivity.class);
-            intent.putExtra(MovieDetailActivity.INTENT_MOVIE_ID, movieId);
+//            intent.putExtra(MovieDetailActivity.INTENT_MOVIE_ID, movieId);
+            intent.putExtra(MovieDetailActivity.INTENT_MOVIE, movie);
             context.startActivity(intent);
         }
     };

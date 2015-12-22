@@ -2,5 +2,6 @@
 <resources>
 
     <color name="color_primary">#ff4c4b</color>
+    <color name="expansion">#24aee4</color>
 
 </resources>
