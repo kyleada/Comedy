@@ -19,7 +19,6 @@ public class GetMovieListUsecase implements Usecase<MovieFeed> {
     private Repository repository;
     private String list;
 
-    @Inject
     public GetMovieListUsecase(Repository repository, String list) {
         this.repository = repository;
         this.list = list;

@@ -17,7 +17,6 @@ public class GetMovieDetailUsecase implements Usecase<Movie> {
     private Repository repository;
     private String movieId;
 
-    @Inject
     public GetMovieDetailUsecase(Repository repository, String movieId) {
         this.repository = repository;
         this.movieId = movieId;

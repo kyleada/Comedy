@@ -25,17 +25,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
     private Context context;
     private List<Movie> movieList;
-    private LayoutInflater inflater;
 
     public MovieListAdapter(Context context, List<Movie> movieList) {
         this.context = context;
         this.movieList = movieList;
-        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public MovieListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.layout_movie_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_movie_list_item, parent, false);
         return new MovieListHolder(view);
     }
 
@@ -72,10 +70,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     private View.OnClickListener movieDetailClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-//            String movieId = String.valueOf(view.getTag());
             Movie movie = (Movie) view.getTag();
             Intent intent = new Intent(context, MovieDetailActivity.class);
-//            intent.putExtra(MovieDetailActivity.INTENT_MOVIE_ID, movieId);
             intent.putExtra(MovieDetailActivity.INTENT_MOVIE, movie);
             context.startActivity(intent);
         }
