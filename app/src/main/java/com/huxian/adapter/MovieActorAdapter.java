@@ -1,6 +1,7 @@
 package com.huxian.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.huxian.R;
 import com.huxian.model.Actor;
+import com.huxian.ui.ActorDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -50,7 +52,19 @@ public class MovieActorAdapter extends RecyclerView.Adapter<MovieActorAdapter.Mo
         if (actor.getAvatars() != null && !TextUtils.isEmpty(actor.getAvatars().getLarge())) {
             Picasso.with(context).load(actor.getAvatars().getLarge()).into(holder.ivAvatar);
         }
+        holder.itemView.setTag(actor);
+        holder.itemView.setOnClickListener(actorClickListener);
     }
+
+    private View.OnClickListener actorClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Actor actor = (Actor) view.getTag();
+            Intent intent = new Intent(context, ActorDetailActivity.class);
+            intent.putExtra(ActorDetailActivity.INTENT_ACTOR, actor);
+            context.startActivity(intent);
+        }
+    };
 
     static class MovieActorHolder extends RecyclerView.ViewHolder{
 

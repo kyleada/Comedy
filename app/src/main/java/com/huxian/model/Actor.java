@@ -30,7 +30,6 @@ public class Actor implements Serializable {
     }
 
     public String getId() {
-
         return id;
     }
 
