@@ -1,0 +1,382 @@
+[1mdiff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml[m
+[1mdeleted file mode 100644[m
+[1mindex ded53c8..0000000[m
+[1m--- a/.idea/inspectionProfiles/Project_Default.xml[m
+[1m+++ /dev/null[m
+[36m@@ -1,11 +0,0 @@[m
+[31m-<component name="InspectionProjectProfileManager">[m
+[31m-  <profile version="1.0">[m
+[31m-    <option name="myName" value="Project Default" />[m
+[31m-    <option name="myLocal" value="true" />[m
+[31m-    <inspection_tool class="NonSerializableWithSerialVersionUIDField" enabled="true" level="WARNING" enabled_by_default="true" />[m
+[31m-    <inspection_tool class="SerializableHasSerialVersionUIDField" enabled="true" level="WARNING" enabled_by_default="true">[m
+[31m-      <option name="ignoreAnonymousInnerClasses" value="false" />[m
+[31m-      <option name="superClassString" value="" />[m
+[31m-    </inspection_tool>[m
+[31m-  </profile>[m
+[31m-</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml[m
+[1mdeleted file mode 100644[m
+[1mindex 3b31283..0000000[m
+[1m--- a/.idea/inspectionProfiles/profiles_settings.xml[m
+[1m+++ /dev/null[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-<component name="InspectionProjectProfileManager">[m
+[31m-  <settings>[m
+[31m-    <option name="PROJECT_PROFILE" value="Project Default" />[m
+[31m-    <option name="USE_PROJECT_PROFILE" value="true" />[m
+[31m-    <version value="1.0" />[m
+[31m-  </settings>[m
+[31m-</component>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/java/com/huxian/model/Actor.java b/app/src/main/java/com/huxian/model/Actor.java[m
+[1mindex 9b33c69..b03462e 100644[m
+[1m--- a/app/src/main/java/com/huxian/model/Actor.java[m
+[1m+++ b/app/src/main/java/com/huxian/model/Actor.java[m
+[36m@@ -1,6 +1,7 @@[m
+ package com.huxian.model;[m
+ [m
+ import java.io.Serializable;[m
+[32m+[m[32mimport java.util.List;[m
+ [m
+ /**[m
+  * @author huxian99[m
+[36m@@ -10,8 +11,89 @@[m [mpublic class Actor implements Serializable {[m
+ [m
+     private String id;[m
+     private String name;[m
+[32m+[m[32m    private String name_en;[m
+     private ImageLink avatars;[m
+     private String alt;[m
+[32m+[m[32m    private String mobile_url;[m
+[32m+[m[32m    private String summary;[m
+[32m+[m[32m    private String website;[m
+[32m+[m[32m    private List<String> aka;[m
+[32m+[m[32m    private List<String> aka_en;[m
+[32m+[m[32m    private String gender;[m
+[32m+[m[32m    private String birthday;[m
+[32m+[m[32m    private String born_place;[m
+[32m+[m[32m    private List<String> professions;[m
+[32m+[m[32m    private String constellation;[m
+[32m+[m[32m    private List<Photo> photos;[m
+[32m+[m[32m    private List<Movie> works;[m
+[32m+[m
+[32m+[m[32m    public String getId() {[m
+[32m+[m[32m        return id;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getName() {[m
+[32m+[m[32m        return name;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getName_en() {[m
+[32m+[m[32m        return name_en;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public ImageLink getAvatars() {[m
+[32m+[m[32m        return avatars;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getAlt() {[m
+[32m+[m[32m        return alt;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getMobile_url() {[m
+[32m+[m[32m        return mobile_url;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getSummary() {[m
+[32m+[m[32m        return summary;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getWebsite() {[m
+[32m+[m[32m        return website;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public List<String> getAka() {[m
+[32m+[m[32m        return aka;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public List<String> getAka_en() {[m
+[32m+[m[32m        return aka_en;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getGender() {[m
+[32m+[m[32m        return gender;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getBirthday() {[m
+[32m+[m[32m        return birthday;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getBorn_place() {[m
+[32m+[m[32m        return born_place;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public List<String> getProfessions() {[m
+[32m+[m[32m        return professions;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public String getConstellation() {[m
+[32m+[m[32m        return constellation;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public List<Photo> getPhotos() {[m
+[32m+[m[32m        return photos;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public List<Movie> getWorks() {[m
+[32m+[m[32m        return works;[m
+[32m+[m[32m    }[m
+ [m
+     public void setId(String id) {[m
+         this.id = id;[m
+[36m@@ -21,6 +103,10 @@[m [mpublic class Actor implements Serializable {[m
+         this.name = name;[m
+     }[m
+ [m
+[32m+[m[32m    public void setName_en(String name_en) {[m
+[32m+[m[32m        this.name_en = name_en;[m
+[32m+[m[32m    }[m
+[32m+[m
+     public void setAvatars(ImageLink avatars) {[m
+         this.avatars = avatars;[m
+     }[m
+[36m@@ -29,19 +115,51 @@[m [mpublic class Actor implements Serializable {[m
+         this.alt = alt;[m
+     }[m
+ [m
+[31m-    public String getId() {[m
+[31m-        return id;[m
+[32m+[m[32m    public void setMobile_url(String mobile_url) {[m
+[32m+[m[32m        this.mobile_url = mobile_url;[m
+     }[m
+ [m
+[31m-    public String getName() {[m
+[31m-        return name;[m
+[32m+[m[32m    public void setSummary(String summary) {[m
+[32m+[m[32m        this.summary = summary;[m
+     }[m
+ [m
+[31m-    public ImageLink getAvatars() {[m
+[31m-        return avatars;[m
+[32m+[m[32m    public void setWebsite(String website) {[m
+[32m+[m[32m        this.website = website;[m
+     }[m
+ [m
+[31m-    public String getAlt() {[m
+[31m-        return alt;[m
+[32m+[m[32m    public void setAka(List<String> aka) {[m
+[32m+[m[32m        this.aka = aka;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setAka_en(List<String> aka_en) {[m
+[32m+[m[32m        this.aka_en = aka_en;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setGender(String gender) {[m
+[32m+[m[32m        this.gender = gender;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setBirthday(String birthday) {[m
+[32m+[m[32m        this.birthday = birthday;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setBorn_place(String born_place) {[m
+[32m+[m[32m        this.born_place = born_place;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setProfessions(List<String> professions) {[m
+[32m+[m[32m        this.professions = professions;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setConstellation(String constellation) {[m
+[32m+[m[32m        this.constellation = constellation;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setPhotos(List<Photo> photos) {[m
+[32m+[m[32m        this.photos = photos;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setWorks(List<Movie> works) {[m
+[32m+[m[32m        this.works = works;[m
+     }[m
+ }[m
+[1mdiff --git a/app/src/main/java/com/huxian/network/OpenApiService.java b/app/src/main/java/com/huxian/network/OpenApiService.java[m
+[1mindex 639a5a0..3cddd04 100644[m
+[1m--- a/app/src/main/java/com/huxian/network/OpenApiService.java[m
+[1m+++ b/app/src/main/java/com/huxian/network/OpenApiService.java[m
+[36m@@ -1,5 +1,6 @@[m
+ package com.huxian.network;[m
+ [m
+[32m+[m[32mimport com.huxian.model.Actor;[m
+ import com.huxian.model.Movie;[m
+ import com.huxian.model.MovieFeed;[m
+ [m
+[36m@@ -22,4 +23,7 @@[m [mpublic interface OpenApiService {[m
+     @GET("movie/subject/{movieId}")[m
+     Observable<Movie> getMovie(@Path("movieId") String movieId);[m
+ [m
+[32m+[m[32m    @GET("movie/celebrity/{actorId}")[m
+[32m+[m[32m    Observable<Actor> getActor(@Path("actorId") String actorId);[m
+[32m+[m
+ }[m
+[1mdiff --git a/app/src/main/java/com/huxian/network/Repository.java b/app/src/main/java/com/huxian/network/Repository.java[m
+[1mindex 3a00765..5b6bb16 100644[m
+[1m--- a/app/src/main/java/com/huxian/network/Repository.java[m
+[1m+++ b/app/src/main/java/com/huxian/network/Repository.java[m
+[36m@@ -1,5 +1,6 @@[m
+ package com.huxian.network;[m
+ [m
+[32m+[m[32mimport com.huxian.model.Actor;[m
+ import com.huxian.model.Movie;[m
+ import com.huxian.model.MovieFeed;[m
+ [m
+[36m@@ -14,4 +15,6 @@[m [mpublic interface Repository {[m
+ [m
+     Observable<Movie> getMovie(String movieId);[m
+ [m
+[32m+[m[32m    Observable<Actor> getActor(String actorId);[m
+[32m+[m
+ }[m
+[1mdiff --git a/app/src/main/java/com/huxian/network/RestDataSource.java b/app/src/main/java/com/huxian/network/RestDataSource.java[m
+[1mindex e0baf1c..21eea30 100644[m
+[1m--- a/app/src/main/java/com/huxian/network/RestDataSource.java[m
+[1m+++ b/app/src/main/java/com/huxian/network/RestDataSource.java[m
+[36m@@ -1,5 +1,6 @@[m
+ package com.huxian.network;[m
+ [m
+[32m+[m[32mimport com.huxian.model.Actor;[m
+ import com.huxian.model.Movie;[m
+ import com.huxian.model.MovieFeed;[m
+ import com.huxian.util.Constant;[m
+[36m@@ -37,4 +38,9 @@[m [mpublic class RestDataSource implements Repository {[m
+     public Observable<Movie> getMovie(String movieId) {[m
+         return apiService.getMovie(movieId);[m
+     }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public Observable<Actor> getActor(String actorId) {[m
+[32m+[m[32m        return apiService.getActor(actorId);[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/app/src/main/java/com/huxian/ui/ActorDetailActivity.java b/app/src/main/java/com/huxian/ui/ActorDetailActivity.java[m
+[1mindex 3918029..9b59d43 100644[m
+[1m--- a/app/src/main/java/com/huxian/ui/ActorDetailActivity.java[m
+[1m+++ b/app/src/main/java/com/huxian/ui/ActorDetailActivity.java[m
+[36m@@ -4,20 +4,33 @@[m [mimport android.os.Bundle;[m
+ import android.widget.ImageView;[m
+ import android.widget.TextView;[m
+ [m
+[32m+[m[32mimport com.huxian.ComedyApplication;[m
+ import com.huxian.R;[m
+[32m+[m[32mimport com.huxian.injector.component.DaggerActorDetailComponent;[m
+[32m+[m[32mimport com.huxian.injector.module.ActivityModule;[m
+[32m+[m[32mimport com.huxian.injector.module.ActorDetailModule;[m
+ import com.huxian.model.Actor;[m
+[32m+[m[32mimport com.huxian.presenter.ActorDetailPresenter;[m
+[32m+[m[32mimport com.huxian.ui.view.IActorDetailView;[m
+ import com.squareup.picasso.Picasso;[m
+ [m
+[31m-public class ActorDetailActivity extends BaseActivity {[m
+[32m+[m[32mimport javax.inject.Inject;[m
+[32m+[m
+[32m+[m[32mpublic class ActorDetailActivity extends BaseActivity implements IActorDetailView {[m
+ [m
+     public static final String INTENT_ACTOR = "actor";[m
+ [m
+[32m+[m[32m    @Inject[m
+[32m+[m[32m    ActorDetailPresenter actorDetailPresenter;[m
+[32m+[m
+     private Actor actor;[m
+     private String actorId;[m
+ [m
+     private ImageView ivAvatar;[m
+     private TextView tvName;[m
+[32m+[m[32m    private TextView tvEnglishName;[m
+     private TextView tvBornPlace;[m
+[32m+[m[32m    private TextView tvGender;[m
+ [m
+     @Override[m
+     protected void onCreate(Bundle savedInstanceState) {[m
+[36m@@ -25,6 +38,8 @@[m [mpublic class ActorDetailActivity extends BaseActivity {[m
+         setContentView(R.layout.activity_actor_detail);[m
+         initData();[m
+         initView();[m
+[32m+[m[32m        initDependencyInjector();[m
+[32m+[m[32m        initPresenter();[m
+     }[m
+ [m
+     private void initData() {[m
+[36m@@ -35,10 +50,33 @@[m [mpublic class ActorDetailActivity extends BaseActivity {[m
+     private void initView() {[m
+         ivAvatar = (ImageView) findViewById(R.id.iv_actor_detail_avatar);[m
+         tvName = (TextView) findViewById(R.id.tv_actor_detail_name);[m
+[32m+[m[32m        tvEnglishName = (TextView) findViewById(R.id.tv_actor_detail_english_name);[m
+         tvBornPlace = (TextView) findViewById(R.id.tv_actor_detail_born_place);[m
+[32m+[m[32m        tvGender = (TextView) findViewById(R.id.tv_actor_detail_gender);[m
+ [m
+         Picasso.with(this).load(actor.getAvatars().getMedium()).into(ivAvatar);[m
+         tvName.setText(actor.getName());[m
+     }[m
+ [m
+[32m+[m[32m    private void initDependencyInjector() {[m
+[32m+[m[32m        ComedyApplication comedyApplication = (ComedyApplication) getApplication();[m
+[32m+[m[32m        DaggerActorDetailComponent.builder()[m
+[32m+[m[32m                .comedyComponent(comedyApplication.component())[m
+[32m+[m[32m                .actorDetailModule(new ActorDetailModule(actorId))[m
+[32m+[m[32m                .activityModule(new ActivityModule(this))[m
+[32m+[m[32m                .build()[m
+[32m+[m[32m                .inject(this);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    private void initPresenter() {[m
+[32m+[m[32m        actorDetailPresenter.attachView(this);[m
+[32m+[m[32m        actorDetailPresenter.onCreate();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void showActor(Actor actor) {[m
+[32m+[m[32m        tvEnglishName.setText(actor.getName_en());[m
+[32m+[m[32m        tvBornPlace.setText(actor.getBorn_place());[m
+[32m+[m[32m        tvGender.setText(actor.getGender());[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/app/src/main/res/layout/activity_actor_detail.xml b/app/src/main/res/layout/activity_actor_detail.xml[m
+[1mindex 1cff5d2..589b0b7 100644[m
+[1m--- a/app/src/main/res/layout/activity_actor_detail.xml[m
+[1m+++ b/app/src/main/res/layout/activity_actor_detail.xml[m
+[36m@@ -25,11 +25,31 @@[m
+             android:textStyle="bold"/>[m
+ [m
+         <TextView[m
+[31m-            android:id="@+id/tv_actor_detail_born_place"[m
+[32m+[m[32m            android:id="@+id/tv_actor_detail_english_name"[m
+             android:layout_width="wrap_content"[m
+             android:layout_height="wrap_content"[m
+             android:layout_below="@id/tv_actor_detail_name"[m
+             android:layout_marginLeft="8dp"[m
+[32m+[m[32m            android:layout_marginTop="2dp"[m
+[32m+[m[32m            android:layout_toRightOf="@id/iv_actor_detail_avatar"[m
+[32m+[m[32m            android:textSize="12sp"/>[m
+[32m+[m
+[32m+[m[32m        <TextView[m
+[32m+[m[32m            android:id="@+id/tv_actor_detail_born_place"[m
+[32m+[m[32m            android:layout_width="wrap_content"[m
+[32m+[m[32m            android:layout_height="wrap_content"[m
+[32m+[m[32m            android:layout_below="@id/tv_actor_detail_english_name"[m
+[32m+[m[32m            android:layout_marginLeft="8dp"[m
+[32m+[m[32m            android:layout_marginTop="4dp"[m
+[32m+[m[32m            android:layout_toRightOf="@id/iv_actor_detail_avatar"[m
+[32m+[m[32m            android:textSize="12sp"/>[m
+[32m+[m
+[32m+[m[32m        <TextView[m
+[32m+[m[32m            android:id="@+id/tv_actor_detail_gender"[m
+[32m+[m[32m            android:layout_width="wrap_content"[m
+[32m+[m[32m            android:layout_height="wrap_content"[m
+[32m+[m[32m            android:layout_below="@id/tv_actor_detail_born_place"[m
+[32m+[m[32m            android:layout_marginLeft="8dp"[m
+             android:layout_marginTop="4dp"[m
+             android:layout_toRightOf="@id/iv_actor_detail_avatar"[m
+             android:textSize="12sp"/>[m

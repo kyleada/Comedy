@@ -1,5 +1,6 @@
 package com.huxian.network;
 
+import com.huxian.model.Actor;
 import com.huxian.model.Movie;
 import com.huxian.model.MovieFeed;
 
@@ -21,5 +22,8 @@ public interface OpenApiService {
 
     @GET("movie/subject/{movieId}")
     Observable<Movie> getMovie(@Path("movieId") String movieId);
+
+    @GET("movie/celebrity/{actorId}")
+    Observable<Actor> getActor(@Path("actorId") String actorId);
 
 }

@@ -1,5 +1,6 @@
 package com.huxian.network;
 
+import com.huxian.model.Actor;
 import com.huxian.model.Movie;
 import com.huxian.model.MovieFeed;
 import com.huxian.util.Constant;
@@ -36,5 +37,10 @@ public class RestDataSource implements Repository {
     @Override
     public Observable<Movie> getMovie(String movieId) {
         return apiService.getMovie(movieId);
+    }
+
+    @Override
+    public Observable<Actor> getActor(String actorId) {
+        return apiService.getActor(actorId);
     }
 }

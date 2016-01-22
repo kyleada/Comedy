@@ -25,10 +25,30 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/tv_actor_detail_born_place"
+            android:id="@+id/tv_actor_detail_english_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_actor_detail_name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/iv_actor_detail_avatar"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_actor_detail_born_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_actor_detail_english_name"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/iv_actor_detail_avatar"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_actor_detail_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_actor_detail_born_place"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@id/iv_actor_detail_avatar"
