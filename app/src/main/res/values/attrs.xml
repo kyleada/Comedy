@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KSwipeRefreshLayoutAttrs">
+        <attr name="scrollableChildId" format="reference" />
+        <attr name="emptyChildId" format="reference" />
+    </declare-styleable>
+</resources>
