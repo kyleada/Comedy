@@ -15,4 +15,8 @@ public interface IMovieListView extends IView {
 
     void hideLoading();
 
+    void showEmpty();
+
+    void hideEmpty();
+
 }

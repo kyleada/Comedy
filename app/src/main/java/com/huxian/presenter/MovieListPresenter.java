@@ -49,13 +49,16 @@ public class MovieListPresenter implements BasePresenter {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        e.printStackTrace();
+                        movieListView.hideLoading();
+                        movieListView.showEmpty();
                     }
 
                     @Override
                     public void onNext(MovieFeed movieFeed) {
                         movieList.addAll(movieFeed.subjects);
                         movieListView.hideLoading();
+                        movieListView.hideEmpty();
                         movieListView.showMovieList(movieList);
                     }
                 });

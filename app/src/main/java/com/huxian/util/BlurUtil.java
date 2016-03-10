@@ -2,10 +2,6 @@ package com.huxian.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v8.renderscript.Allocation;
-import android.support.v8.renderscript.Element;
-import android.support.v8.renderscript.RenderScript;
-import android.support.v8.renderscript.ScriptIntrinsicBlur;
 
 /**
  * @author huxian99
@@ -21,19 +17,19 @@ public class BlurUtil {
     public static Bitmap apply(Context context, Bitmap sentBitmap, int radius) {
         try {
             Bitmap bitmap = sentBitmap.copy(sentBitmap.getConfig(), true);
-            final RenderScript rs = RenderScript.create(context);
-            final Allocation input = Allocation.createFromBitmap(rs, sentBitmap);
-            final Allocation output = Allocation.createTyped(rs, input.getType());
-            final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
-            script.setRadius(radius);
-            script.setInput(input);
-            script.forEach(output);
-            output.copyTo(bitmap);
-
-            rs.destroy();
-            input.destroy();
-            output.destroy();
-            script.destroy();
+            //final RenderScript rs = RenderScript.create(context);
+            //final Allocation input = Allocation.createFromBitmap(rs, sentBitmap);
+            //final Allocation output = Allocation.createTyped(rs, input.getType());
+            //final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+            //script.setRadius(radius);
+            //script.setInput(input);
+            //script.forEach(output);
+            //output.copyTo(bitmap);
+            //
+            //rs.destroy();
+            //input.destroy();
+            //output.destroy();
+            //script.destroy();
 
             return bitmap;
         } catch(Exception e) {

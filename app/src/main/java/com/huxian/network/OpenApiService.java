@@ -3,10 +3,9 @@ package com.huxian.network;
 import com.huxian.model.Actor;
 import com.huxian.model.Movie;
 import com.huxian.model.MovieFeed;
-
-import retrofit.http.GET;
-import retrofit.http.Path;
-import retrofit.http.Query;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**

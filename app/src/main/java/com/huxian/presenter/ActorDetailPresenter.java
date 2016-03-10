@@ -4,9 +4,6 @@ import com.huxian.domain.GetActorDetailUsecase;
 import com.huxian.model.Actor;
 import com.huxian.ui.view.IActorDetailView;
 import com.huxian.ui.view.IView;
-
-import javax.inject.Inject;
-
 import rx.functions.Action1;
 
 /**
@@ -17,7 +14,7 @@ public class ActorDetailPresenter implements BasePresenter {
     private IActorDetailView actorDetailView;
     private GetActorDetailUsecase getActorDetailUsecase;
 
-    @Inject
+    //@Inject
     public ActorDetailPresenter(GetActorDetailUsecase getActorDetailUsecase) {
         this.getActorDetailUsecase = getActorDetailUsecase;
     }

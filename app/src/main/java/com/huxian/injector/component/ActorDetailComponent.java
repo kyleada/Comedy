@@ -4,6 +4,7 @@ import com.huxian.domain.GetActorDetailUsecase;
 import com.huxian.injector.ActivityScope;
 import com.huxian.injector.module.ActivityModule;
 import com.huxian.injector.module.ActorDetailModule;
+import com.huxian.presenter.ActorDetailPresenter;
 import com.huxian.ui.ActorDetailActivity;
 
 import dagger.Component;
@@ -18,5 +19,7 @@ public interface ActorDetailComponent extends ActivityComponent {
     void inject(ActorDetailActivity actorDetailActivity);
 
     GetActorDetailUsecase getActorDetailUsecase();
+
+    ActorDetailPresenter actorDetailPresenter();
 
 }

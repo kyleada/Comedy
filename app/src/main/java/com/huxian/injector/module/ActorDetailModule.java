@@ -4,6 +4,7 @@ import com.huxian.domain.GetActorDetailUsecase;
 import com.huxian.injector.ActivityScope;
 import com.huxian.network.Repository;
 
+import com.huxian.presenter.ActorDetailPresenter;
 import dagger.Module;
 import dagger.Provides;
 
@@ -23,6 +24,12 @@ public class ActorDetailModule {
     @ActivityScope
     GetActorDetailUsecase provideGetActorDetailUsecase(Repository repository) {
         return new GetActorDetailUsecase(repository, actorId);
+    }
+
+    @Provides
+    @ActivityScope
+    ActorDetailPresenter provideActorDetailPresenter(GetActorDetailUsecase getActorDetailUsecase){
+        return new ActorDetailPresenter(getActorDetailUsecase);
     }
 
 }

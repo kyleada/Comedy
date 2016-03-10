@@ -1,11 +1,12 @@
 package com.huxian.ui;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.huxian.ComedyApplication;
 import com.huxian.R;
+import com.huxian.injector.component.ActorDetailComponent;
 import com.huxian.injector.component.DaggerActorDetailComponent;
 import com.huxian.injector.module.ActivityModule;
 import com.huxian.injector.module.ActorDetailModule;
@@ -14,13 +15,13 @@ import com.huxian.presenter.ActorDetailPresenter;
 import com.huxian.ui.view.IActorDetailView;
 import com.squareup.picasso.Picasso;
 
-import javax.inject.Inject;
-
 public class ActorDetailActivity extends BaseActivity implements IActorDetailView {
 
     public static final String INTENT_ACTOR = "actor";
 
-    @Inject
+    ActorDetailComponent actorDetailComponent;
+
+    //@Inject
     ActorDetailPresenter actorDetailPresenter;
 
     private Actor actor;
@@ -60,17 +61,22 @@ public class ActorDetailActivity extends BaseActivity implements IActorDetailVie
 
     private void initDependencyInjector() {
         ComedyApplication comedyApplication = (ComedyApplication) getApplication();
-        DaggerActorDetailComponent.builder()
-                .comedyComponent(comedyApplication.component())
-                .actorDetailModule(new ActorDetailModule(actorId))
-                .activityModule(new ActivityModule(this))
-                .build()
-                .inject(this);
+        actorDetailComponent  = DaggerActorDetailComponent.builder()
+                                                            .comedyComponent(comedyApplication.component())
+                                                            .actorDetailModule(new ActorDetailModule(actorId))
+                                                            .activityModule(new ActivityModule(this))
+                                                            .build();
+        //actorDetailComponent.inject(this);
+
     }
 
     private void initPresenter() {
+        actorDetailPresenter = actorDetailComponent.actorDetailPresenter();
         actorDetailPresenter.attachView(this);
         actorDetailPresenter.onCreate();
+
+        SwipeRefreshLayout sw;
+
     }
 
     @Override
